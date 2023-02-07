@@ -1,0 +1,23 @@
+n = int(input())
+
+for i in range(n):
+    lst = list(map(int, input().split()))
+    average = 0
+    score = 0
+    student = 0
+
+    if lst.count(lst[1]) == lst[0]:
+        student = lst[0]
+    else:
+        for i in range(1, len(lst)):
+            average += lst[i]
+
+        score = average // lst[0]
+
+        for i in lst:
+            if i > score:
+                student += 1
+
+    result = (student * 100) / lst[0]
+
+    print('{:.3f}%'.format(result))
