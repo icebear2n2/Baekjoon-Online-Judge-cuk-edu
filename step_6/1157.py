@@ -1,15 +1,8 @@
 n = list(str(input()).upper())
-count = []
+dic = {}
 
 for i in set(n):
-    if n.count(i) > 1:
-        count.append(i)
+    dic[i] = n.count(i)
 
-if len(n) == 1:
-    print(n[0])
+sort_dict = dict(sorted(dic.items(), key=lambda x: x[1]))
 
-elif len(n) == len(set(n)) or len(count) > 1:
-    print('?')
-
-else:
-    print(count[0])
